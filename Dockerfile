@@ -3,10 +3,10 @@ MAINTAINER "Frederic Auberson"
 
 RUN apt-get update && apt-get install -y \
     g++ \
-	tini \
-	bash \
-	git \
-	openssh-client \
+    tini \
+    bash \
+    git \
+    openssh-client \
     && rm -rf /var/lib/apt/lists/*
 	
 RUN pip3 install tensorflow-gpu
@@ -19,13 +19,14 @@ RUN pip3 install numpy \
         seaborn \
         jupyter \
         pyyaml \
-		pre-commit \
-		graphviz \
-		pydot-ng \
+        pre-commit \
+        graphviz \
+        pydot-ng \
         h5py \
-		tensorflow-addons && \
+        numpy_indexed \
+        tensorflow-addons && \
     pip3 install keras --no-deps && \
-	pip3 install "tqdm>=4.36.1" && \
+    pip3 install "tqdm>=4.36.1" && \
     pip3 install imutils
 
 COPY jupyter_notebook_config.py /root/.jupyter/jupyter_notebook_config.py
